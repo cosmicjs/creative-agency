@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>{{ cosmic.object.header.metadata.site_title }}</title>
+    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+    
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans|Raleway" rel="stylesheet">
+	<link rel="stylesheet" href="css/flexslider.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+    <!-- =======================================================
+        Theme Name: MyBiz
+        Theme URL: https://bootstrapmade.com/mybiz-free-business-bootstrap-theme/
+        Author: BootstrapMade.com
+        Author URL: https://bootstrapmade.com
+    ======================================================= -->
+</head>
+<body id="top" data-spy="scroll">
+	<!--top header-->
+
+	<header id="home">
+		<section class="top-nav hidden-xs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="top-left">
+
+							<ul>
+								{{# cosmic.object.header.metadata.facebook }}
+                  <li><a href="{{ cosmic.object.header.metadata.facebook }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                {{/ cosmic.object.header.metadata.facebook }}
+								{{# cosmic.object.header.metadata.twitter }}
+                  <li><a href="{{ cosmic.object.header.metadata.twitter }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                {{/ cosmic.object.header.metadata.twitter }}
+                {{# cosmic.object.header.metadata.linkedin }}
+								  <li><a href="{{ cosmic.object.header.metadata.linkedin }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                {{/ cosmic.object.header.metadata.linkedin }}
+                {{# cosmic.object.header.metadata.instagram }}
+                  <li><a href="{{ cosmic.object.header.metadata.instagram }}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                {{/ cosmic.object.header.metadata.instagram }}
+							</ul>
+
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="top-right">
+							<p>Location:<span>{{ cosmic.object.header.metadata.location }}</span></p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!--main-nav-->
+
+		<div id="main-nav">
+
+			<nav class="navbar">
+				<div class="container">
+
+					<div class="navbar-header">
+						<a href="/#home" class="navbar-brand">{{ cosmic.object.header.metadata.site_title }}</a>
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ftheme">
+							<span class="sr-only">Toggle</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+
+					<div class="navbar-collapse collapse" id="ftheme">
+
+						<ul class="nav navbar-nav navbar-right">
+							{{# cosmic.object.header.metadata.menu }}
+                <li><a href="{{ link }}">{{ title }}</a></li>
+              {{/ cosmic.object.header.metadata.menu }}
+							<!-- <li class="hidden-sm hidden-xs">
+                  <a href="#" id="ss"><i class="fa fa-search" aria-hidden="true"></i></a>
+              </li> -->
+						</ul>
+
+					</div>
+
+					<!-- <div class="search-form">
+            <form>
+              <input type="text" id="s" size="40" placeholder="Search..." />
+            </form>
+          </div> -->
+
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<!--slider-->
+	<div id="slider" class="flexslider" style="height: 600px;">
+    <ul class="slides">
+      {{# cosmic.object.hero.metadata.slider }}
+        <li>
+        	<div style="width: 100%; height: 600px; background-image: url({{ image.imgix_url }}?w=2000); background-size: cover; background-position: center;">
+
+  				<div class="caption" style="position: relative; z-index: 100">
+            <div class="underlay"></div>
+            <div class="overlay">
+              <h2>
+                <span>{{ headline }}</span>
+              </h2>
+    					<p style="margin-bottom: 20px;">{{ subheadline }}</p>
+    					<a href="{{ button_link }}" class="btn">{{ button_text }}</a>
+            </div>
+          </div>
+        </li>
+      {{/ cosmic.object.hero.metadata.slider }}
+    </ul>
+  </div>
+
+  <!--about-->
+  <div id="about">
+
+  	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+				<div class="about-heading">
+					<h2>{{ cosmic.object.about.metadata.headline }}</h2> 
+					{{{ cosmic.object.about.content }}}
+				</div>
+			</div>
+		</div>   	
+  	</div>
+
+  	<!--about wrapper left-->
+  	<div class="container">
+
+  		<div class="row">
+  			<div class="col-xs-12 hidden-sm col-md-5">
+
+  				<div class="about-left">
+  					<img src="{{ cosmic.object.about.metadata.main_image.imgix_url }}" alt="">
+  				</div>
+
+  			</div>
+
+  			<!--about wrapper right-->
+  			<div class="col-xs-12 col-md-7">
+  				<div class="about-right">
+  					<div class="about-right-heading">
+  						<h1>{{ cosmic.object.about.metadata.about_title }}</h1>
+  					</div>
+
+  					<div class="about-right-boot">
+  						<div class="about-right-wrapper">
+    						<a href="#"><h3>{{ cosmic.object.about.metadata.boost_title }}</h3></a>
+    						{{{ cosmic.object.about.metadata.boost_content }}}
+  						</div>
+  					</div>
+
+  					<div class="about-right-best">
+  						<div class="about-right-wrapper">
+    						<a href="#"><h3>{{ cosmic.object.about.metadata.stats_title }}</h3></a>
+    						{{{ cosmic.object.about.metadata.stats_content }}}
+  						</div>
+  					</div>
+
+  					<div class="about-right-support">
+  						<div class="about-right-wrapper">
+    						<a href="#"><h3>{{ cosmic.object.about.metadata.support_title }}</h3></a>
+    						{{{ cosmic.object.about.metadata.support_content }}}
+  						</div>
+  					</div>
+
+  				</div>
+  			</div>
+  		</div>
+
+  	</div>
+  </div>
+
+	<!--about bg-->
+	<div id="about-bg" style="background-image: url({{ cosmic.object.stats.metadata.background_image.imgix_url }})">
+
+		<div class="container">
+			<div class="row">
+
+				<div class="about-bg-heading">
+					<h1>{{ cosmic.object.stats.metadata.headline }}</h1>
+					<p>{{ cosmic.object.stats.metadata.subheadline }}</p>
+				</div>
+
+				<div class=" col-xs-12 col-md-3">
+					<div class="about-bg-wrapper">
+							<span class="count"><h1>{{ cosmic.object.stats.metadata.stat_1_value }}</h1></span>
+						<p>{{ cosmic.object.stats.metadata.stat_1_title }}</p>
+					</div>
+				</div>
+
+				<div class="col-xs-12 col-md-3">
+					<div class="about-bg-wrapper">
+						<span class="count"><h1>{{ cosmic.object.stats.metadata.stat_2_value }}</h1></span>
+						<p>{{ cosmic.object.stats.metadata.stat_2_title }}</p>
+					</div>
+				</div>
+
+				<div class="col-xs-12 col-md-3">
+					<div class="about-bg-wrapper">
+						<span class="count"><h1>{{ cosmic.object.stats.metadata.stat_3_value }}</h1></span>
+						<p>{{ cosmic.object.stats.metadata.stat_3_title }}</p>
+					</div>
+				</div>
+
+				<div class="col-xs-12 col-md-3">
+					<div class="about-bg-wrapper">
+						<span class="count"><h1>{{ cosmic.object.stats.metadata.stat_4_value }}</h1></span>
+						<p>{{ cosmic.object.stats.metadata.stat_4_title }}</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="cover"></div>
+
+	</div> 
+
+	<!--services-->
+	<div id="services">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-6 col-md-offset-3">
+					<div class="services-heading">
+						<h2>{{ cosmic.object.services.metadata.headline }}</h2> 
+						{{{ cosmic.object.services.content }}}
+					</div>
+				</div>
+			</div>   	
+    </div>
+
+			<!--services wrapper-->
+    <section class="services-style-one">
+    	<div class="outer-box clearfix">
+    		
+            <div class="services-column">
+            	<div class="content-outer">
+                	<div class="row clearfix">
+                    	{{# cosmic.object.services.metadata.services }}
+                        <div class="services-block col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        	<div class="inner-box">
+                            	<div class="icon-box"><i class="fa fa-{{ font_icon }}" aria-hidden="true"></i></div>
+                                <h4>{{ title }}</h4>
+                                <div class="text">{{ content }}</div>
+                            </div>
+                        </div>
+                      {{/ cosmic.object.services.metadata.services }}
+                    </div>
+                </div>
+            </div>
+
+            <!--Content Column-->
+            <div class="content-column clearfix">
+                <div class="content-box">
+                	<div class="inner-box">
+                        <!--Section Title-->
+                        <div class="sec-title aligned-right">
+                          <h2><span>{{ cosmic.object.services.metadata.side_section_title }}<span></h2>
+                        </div>
+                        <div class="text">
+                          {{{ cosmic.object.services.metadata.side_section_content }}}
+                        </div>
+                        <a href="{{ cosmic.object.services.metadata.side_section_button_link }}" class="btn">{{ cosmic.object.services.metadata.side_section_button_text }}</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+			<!--service gapping-->
+			<div class="services-footer hidden-xs">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-7">
+							<div class="services-footer-left">
+								<h3>{{ cosmic.object.services.metadata.booking_title }}</h3>
+								<p>{{ cosmic.object.services.metadata.booking_subtitle }}</p>
+							</div>
+						</div>
+
+						<div class="col-md-5">
+							<div class="services-footer-right">
+								<a href="{{ cosmic.object.services.metadata.booking_button_link }}" class="btn">{{ cosmic.object.services.metadata.booking_button_text }}</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--portfolio-->
+		<div id="portfolio">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+						<div class="portfolio-heading">
+							<h2>{{ cosmic.object.portfolio.metadata.headline }}</h2> 
+							{{{ cosmic.object.portfolio.content }}}
+						</div>
+					</div>
+
+				</div>   	
+	    	</div>
+
+	    	<div class="portfolio-thumbnail">
+	    		<div class="container-fluid">
+	    			<div class="row">
+              {{# cosmic.objects.type.portfolio-items}}
+                <div class="col-xs-6 col-sm-4 col-md-3" style="padding: 0;">
+  	    					<div class="item">
+  	    						<div style="background-image: url({{ metadata.image.imgix_url }}?w=600); background-size: cover; background-position: center; width: 100%; height: 400px;" alt=""></div>
+  	    						<div class="caption">
+                   		<i class="fa fa-search" aria-hidden="true"></i>
+                   		<p>{{ title }}</p>
+                  	</div>
+  	    					</div>
+  	    				</div>
+              {{/ cosmic.objects.type.portfolio-items}}
+	    			</div>
+	    		</div>
+	    	</div>
+		</div>
+
+    <!--team-->
+    <div id="team">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            <div class="team-heading">
+              <h2>{{ cosmic.object.team.metadata.headline }}</h2> 
+              {{{ cosmic.object.team.content }}}
+            </div>
+          </div>
+
+        </div>    
+        </div>
+
+        <div class="team-thumbnail">
+          <div class="container-fluid">
+            <div class="row">
+
+              {{# cosmic.objects.type.team-members }}
+                <div class="col-xs-6 col-sm-4 col-md-3" style="padding: 0;">
+                  <div class="item">
+                    <div style="background-image: url({{ metadata.image.imgix_url }}?w=600); background-size: cover; background-position: center; width: 100%; height: 400px;" alt=""></div>
+                    <div class="caption">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                      <p>{{ title }}</p>
+                    </div>
+                  </div>
+                </div>
+              {{/ cosmic.objects.type.team-members }}
+                <div class="col-xs-6 col-sm-4 col-md-3" style="padding: 0;">
+                  <div class="item">
+                    <div style="font-size: 28px; padding-top: 180px; text-align: center; text-transform: uppercase; background-color: #efefef; background-size: cover; background-position: center; width: 100%; height: 400px;" alt="">Maybe YOU!<br/><a href="/#get-touch" style="font-size: 16px;">Contact Us</a></div>
+                    <a href="/#get-touch" class="caption">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                      <p>{{ title }}</p>
+                    </a>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+		<!--contact form-->
+		<div id="get-touch">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+						<div class="get-touch-heading">
+							<h2>{{ cosmic.object.contact.metadata.headline }}</h2> 
+              {{{ cosmic.object.contact.content }}}
+						</div>
+					</div>
+				</div>
+				<div class="content">
+          <div class="row">
+            <form action="" method="post" role="form" class="form contactForm">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validation"></div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validation"></div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validation"></div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validation"></div>
+                </div>
+              </div>
+              <div class="submit">
+                <button class="btn btn-default" type="submit">Send Now</button>
+              </div>
+            </form>
+          </div>
+        </div>	
+	    </div>
+		</div>
+
+
+		<!--contact-->
+		<div id="contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+						<div class="contact-heading">
+							<h2>{{ cosmic.object.contact.metadata.map_headline }}</h2> 
+							{{{ cosmic.object.contact.metadata.map_content }}}
+						</div>
+					</div>
+				</div>   	
+	    </div>
+
+	    <div id="google-map" data-latitude="{{ cosmic.object.contact.metadata.map_latitude }}" data-longitude="{{ cosmic.object.contact.metadata.map_longitude }}"></div>
+            
+		</div>
+
+
+		<!--client-->
+		<div id="client">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-sm-4 col-md-2">
+						<span></span><img src="{{ cosmic.object.logo-strip.metadata.logo_1.imgix_url }}" alt="">
+					</div>
+
+					<div class="col-sm-4 col-md-2">
+						<span></span><img src="{{ cosmic.object.logo-strip.metadata.logo_2.imgix_url }}" alt="">
+					</div>
+
+					<div class="col-sm-4 col-md-2">
+						<span></span><img src="{{ cosmic.object.logo-strip.metadata.logo_3.imgix_url }}" alt="">
+					</div>
+
+					<div class="col-sm-4 col-md-2">
+						<span></span><img src="{{ cosmic.object.logo-strip.metadata.logo_4.imgix_url }}" alt="">
+					</div>
+
+					<div class="col-sm-4 col-md-2">
+						<span></span><img src="{{ cosmic.object.logo-strip.metadata.logo_5.imgix_url }}" alt="">
+					</div>
+
+					<div class="col-sm-4 col-md-2">
+						<span></span><img src="{{ cosmic.object.logo-strip.metadata.logo_6.imgix_url }}" alt="">
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!--footer-->
+		<div id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="footer-heading">
+							<h3><span>{{ cosmic.object.footer.metadata.about_us_title }}</span></h3>
+							{{{ cosmic.object.footer.metadata.about_us_content }}}
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="footer-heading">
+							<h3><span>{{ cosmic.object.footer.metadata.latest_news_title }}</h3>
+							<ul>
+								{{# cosmic.object.footer.metadata.latest_news }}
+                  <li><a target="_blank" href="{{ link }}">{{ title }}</a></li>
+                {{/ cosmic.object.footer.metadata.latest_news }}
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="footer-heading">
+							<h3><span>{{ cosmic.object.footer.metadata.instagram_title }}</span></h3>
+							<div class="insta">
+								<ul>
+									{{# cosmic.object.footer.metadata.instagram_images }}
+                    <a target="_blank" href="{{ link }}" class="pull-left" style="width: 100px; height: 100px; background-repeat: no-repeat; display: block; background-image: url({{ image.imgix_url }}); background-size: cover; background-position: center"></a>
+                  {{/ cosmic.object.footer.metadata.instagram_images }}
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!--bottom footer-->
+		<div id="bottom-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="footer-left">
+							&copy; {{ cosmic.object.footer.metadata.site_title }}. All rights reserved
+              <div class="credits">
+                  <div style="margin: 20px 0;">
+                    <a href="https://cosmicjs.com" target="_blank"><img style="float:left;margin-right:15px;position:relative;top: -5px;" src="https://cosmicjs.com/images/logo.svg" width="28" height="28"><span>Proudly powered by Cosmic JS</span></a>
+                  </div>
+                  <div style="margin: 20px 0;">
+                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                  </div>
+              </div>
+						</div>
+					</div>
+
+					<div class="col-md-8">
+						<div class="footer-right">
+              <ul class="list-unstyled list-inline pull-right">
+                  {{# cosmic.object.header.metadata.menu }}
+                    <li><a href="{{ link }}">{{ title }}</a></li>
+                  {{/ cosmic.object.header.metadata.menu }}
+              </ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        
+
+	
+	<!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/jquery.inview.js"></script>
+    <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="js/script.js"></script>
+    <script src="contactform/contactform.js"></script>
+    
+</body>
+</html>
