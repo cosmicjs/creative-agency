@@ -5,12 +5,19 @@ app.engine('html', hogan)
 app.set('port', (process.env.PORT || 3000))
 app.use('/', express.static(__dirname + '/public/'))
 var Cosmic = require('cosmicjs')
-var bucket_slug = process.env.COSMIC_BUCKET || 'creative-agency'
 var bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+var bucket_slug = process.env.COSMIC_BUCKET || 'creative-agency'
+var config = {
+  bucket: {
+    slug: bucket_slug,
+    read_key: process.env.COSMIC_READ_KEY,
+    write_key: process.env.COSMIC_WRITE_KEY
+  }
+}
 app.get('/', function(req, res) {
-  Cosmic.getObjects({ bucket: { slug: bucket_slug } }, function(err, response) {
+  Cosmic.getObjects(config, function(err, response) {
     var cosmic = response
     res.locals.cosmic = cosmic
     res.render('index.html')
