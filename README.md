@@ -27,6 +27,7 @@ COSMIC_BUCKET=your-bucket-slug yarn start
 Open [http://localhost:3000](http://localhost:3000).
 ###Setting up MailGun to send emails from the contact form
 Because Node.js doesn't have a mail server, the contact form uses MailGun to send eamils.
+
 1. Go to MailGun and login to your account or setup a new account.
 2. Get your api key and domain.
 3. Add your domain and api key to your environment variables (MAILGUN_DOMAIN, MAILGUN_KEY) located in a tab on Your Bucket > Web Hosting, or hard code them into `app.js` (not advised).
